@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="94fccd61-9b1e-4a7c-8eb5-2940f599a5ac" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2sfqVlgbbTyiHisjssNS0Xo7tr2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ArbolPitagoras.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CantorFractal.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Coordenadas.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DragonFractal.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FractalDragon.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FractalHelecho.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FractalHexagono.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FractalMandelbrot.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FractalSierpinski.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FractalTree.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MiVentana.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Tarea2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Tarea3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Tarea4.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/diegogax17/Downloads/Practica1Graficacion/Practica1Graficacion&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94fccd61-9b1e-4a7c-8eb5-2940f599a5ac" name="Changes" comment="" />
+      <created>1738857004854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738857004854</updated>
+      <workItem from="1738857006100" duration="3477000" />
+      <workItem from="1738869116282" duration="136000" />
+      <workItem from="1738870053129" duration="11000" />
+      <workItem from="1738870175883" duration="38000" />
+      <workItem from="1739055329735" duration="1087000" />
+      <workItem from="1739169302639" duration="175000" />
+      <workItem from="1739200213897" duration="1162000" />
+      <workItem from="1739211551508" duration="25000" />
+      <workItem from="1739426018266" duration="163000" />
+      <workItem from="1739426187351" duration="63000" />
+      <workItem from="1739465563441" duration="188000" />
+      <workItem from="1739469075242" duration="28000" />
+      <workItem from="1739798901491" duration="519000" />
+      <workItem from="1739805003617" duration="4826000" />
+      <workItem from="1739809842039" duration="1637000" />
+      <workItem from="1739987068006" duration="907000" />
+      <workItem from="1740061834109" duration="466000" />
+      <workItem from="1740064170733" duration="334000" />
+      <workItem from="1740069932600" duration="777000" />
+      <workItem from="1740355906404" duration="22000" />
+      <workItem from="1740380328996" duration="72000" />
+      <workItem from="1740380620309" duration="70000" />
+      <workItem from="1740409526667" duration="813000" />
+      <workItem from="1740410353242" duration="5705000" />
+      <workItem from="1740421948742" duration="37000" />
+      <workItem from="1740423932746" duration="415000" />
+      <workItem from="1740984783856" duration="156000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Tarea3.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
