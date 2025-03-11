@@ -3,7 +3,7 @@ package Curvas_Bezier;
 import javax.swing.*;
 import java.awt.*;
 
-public class Bezier extends JFrame {
+public class BezierTab extends JFrame {
     private final int[][] puntosDeControl = {
             {0, 0}, {3, 4}, {9, -4}, {10, 2}
     };
