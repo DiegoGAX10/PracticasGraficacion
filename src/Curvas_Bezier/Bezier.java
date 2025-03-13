@@ -1,54 +1,59 @@
 package Curvas_Bezier;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class Bezier extends JFrame {
-    private final int[][] puntosDeControl = {
-            {0, 0}, {3, 4}, {9, -4}, {10, 2}
+    double[][] puntosDeControl = {
+            {1,1},
+            {4,7},
+            {7,-4},
+            {10,2}
     };
 
     public Bezier() {
-        setTitle("Curva de Bézier");
-        setSize(800, 800);
+        setTitle("Curva de Bezier");
+        setSize(600, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-
+        BezierTab BezierTab = new BezierTab();
     }
 
     @Override
-    public void paint(Graphics g) {
+    public void paint(Graphics g){
         super.paint(g);
         g.setColor(Color.BLACK);
         drawBezier(g);
     }
 
-    private void drawBezier(Graphics g) {
-        int seg = 100;
+    public void drawBezier(Graphics g){
         double t;
-        int xAnterior = puntosDeControl[0][0] * 50 + 300;
-        int yAnterior = -puntosDeControl[0][1] * 50 + 300;
+        int centroX = 300;
+        int centroY = 300;
+        int escala=50;
+        int xAnt=(int)(puntosDeControl[0][0] *escala +centroX);
+        int yAnt=(int)(puntosDeControl[0][1] *escala +centroY);
 
-        for (int i = 1; i <= seg; i++) {
-            t = i /  (double) seg;
-            int x = (int) ((Math.pow(1 - t, 3) * puntosDeControl[0][0] +
-                    3 * Math.pow(1 - t, 2) * t * puntosDeControl[1][0] +
-                    3 * (1 - t) * Math.pow(t, 2) * puntosDeControl[2][0] +
-                    Math.pow(t, 3) * puntosDeControl[3][0]) * 50 + 300);
+        for (int i =0;i <= 1000; i++){
+            t=i/1000.0; //incremento de 0.001
+            int x=(int)((Math.pow(1-t,3)*puntosDeControl[0][0] +
+                    3*Math.pow(1-t,2)*t*puntosDeControl[1][0] +
+                    3*(1-t)*Math.pow(t,2)*puntosDeControl[2][0]+
+                    Math.pow(t,3)*puntosDeControl[3][0])*escala +centroX);
 
-            int y = (int) ((Math.pow(1 - t, 3) * puntosDeControl[0][1] +
-                    3 * Math.pow(1 - t, 2) * t * puntosDeControl[1][1] +
-                    3 * (1 - t) * Math.pow(t, 2) * puntosDeControl[2][1] +
-                    Math.pow(t, 3) * puntosDeControl[3][1]) * -50 + 300);
+            int y=(int)((Math.pow(1-t,3)*puntosDeControl[0][1]+
+                    3*Math.pow(1 - t, 2)*t*puntosDeControl[1][1]+
+                    3*(1 - t)*Math.pow(t, 2)*puntosDeControl[2][1]+
+                    Math.pow(t,3)*puntosDeControl[3][1])*escala +centroY);
 
-            g.drawLine(xAnterior, yAnterior, x, y);
-            xAnterior = x;
-            yAnterior = y;
+            g.drawLine(xAnt,yAnt,x,y);
+            xAnt=x;
+            yAnt=y;
         }
-        g.setColor(Color.red);
-        for (int i = 0; i < 4; i++) {
-            g.fillOval(puntosDeControl[i][0] * 50 + 300 - 5, -puntosDeControl[i][1] * 50 + 300 - 5, 10, 10);
+        g.setColor(Color.RED);
+        for (int i=0;i<4;i++){
+            g.fillOval((int)(puntosDeControl[i][0]*50+300)-5,
+                    (int)(puntosDeControl[i][1]*50+300)-5,10,10);
         }
     }
 
