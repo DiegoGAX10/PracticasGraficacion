@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="tibgraf">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/api/tibgraf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
