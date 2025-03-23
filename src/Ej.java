@@ -59,57 +59,112 @@ public class Ej extends JFrame{
          System.out.println("xd="+xd);
          System.out.println("yd="+yd);*/
 
-        /*
-        ventana(-5,-5,10,10);
-        mirilla(0.1,0.1,0.9,0.9);
-        g.setColor(Color.BLACK);
-        marco(g);
-        g.setColor(Color.red);
-        ejes(g);
-        g.setColor(Color.green);
-        for(double x=-10;x<=10;x+=0.01){
-            double y=x*x;
-            if(enVentana(x,y)){
-                int xd=coorXD(x);
-                int yd=coorYD(y);
-                g.drawRect(xd, yd, 1, 1);
-            }
-        }
-         */
-
-        /* Hacer ondas por 3 PI
-        ventana(-2*Math.PI,-5,2*Math.PI,5);
-        mirilla(0,0,1,1);
+        // Parábola //
+        ventana(-5, -5, 5, 5);
+        mirilla(0, 0, 0.333, 0.5);
         g.setColor(Color.WHITE);
         ejes(g);
         marco(g);
         g.setColor(Color.RED);
-        for (double x=-2*Math.PI;x<=2*Math.PI;x+=0.01){
-            double y=(2.5*Math.sin(x));
-            if(enVentana(x,y)){
-                int xd=coorXD(x);
-                int yd=coorYD(y);
+        for (double x = -5; x <= 5; x += 0.01) {
+            double y = x * x;
+            if (enVentana(x, y)) {
+                int xd = coorXD(x);
+                int yd = coorYD(y);
                 g.drawRect(xd, yd, 1, 1);
             }
         }
-         */
-        ventana(-10,-10,10,10);
-        mirilla(0,0,1,1);
+
+        // Espiral
+        ventana(-10, -10, 10, 10);
+        mirilla(0.333, 0, 0.666, 0.5);
         g.setColor(Color.WHITE);
         ejes(g);
         marco(g);
-        double r=0 ;
-        for (double ang=0;ang<=2*10*Math.PI;ang+=0.01){
-            double x=r*Math.cos(ang);
-            double y=r*Math.sin(ang);
-            if(enVentana(x,y)){
-                int xd=coorXD(x);
-                int yd=coorYD(y);
+        double r = 0;
+        for (double ang = 0; ang <= 2 * 10  * Math.PI; ang += 0.01) {
+            double x = r * Math.cos(ang);
+            double y = r * Math.sin(ang);
+            if (enVentana(x, y)) {
+                int xd = coorXD(x);
+                int yd = coorYD(y);
                 g.drawRect(xd, yd, 1, 1);
-                r=r+0.001;
+                r = r + 0.001;
+            }
+        }
+
+        // Función seno
+        ventana(-2 * Math.PI, -5, 2 * Math.PI, 5);
+        mirilla(0.666, 0, 1, 0.5);
+        g.setColor(Color.WHITE);
+        ejes(g);
+        marco(g);
+        g.setColor(Color.GREEN);
+        for (double x = -2 * Math.PI; x <= 2 * Math.PI; x += 0.01) {
+            double y = 2.5 * Math.sin(x);
+            if (enVentana(x, y)) {
+                int xd = coorXD(x);
+                int yd = coorYD(y);
+                g.drawRect(xd, yd, 1, 1);
+            }
+        }
+
+        // Función de pétalos
+        ventana(-10, -10, 10, 10);
+        mirilla(0, 0.5, 0.333, 1);
+        g.setColor(Color.WHITE);
+        ejes(g);
+        marco(g);
+        for (double ang = 0; ang <= 2 * Math.PI; ang += 0.01) {
+            r = 8 * Math.sin(ang * 4);
+            double x = r * Math.cos(ang);
+            double y = r * Math.sin(ang);
+            if (enVentana(x, y)) {
+                int xd = coorXD(x);
+                int yd = coorYD(y);
+                g.drawRect(xd, yd, 1, 1);
+            }
+        }
+
+        // Función cúbica
+        ventana(-10, -10, 10, 10);
+        mirilla(0.333, 0.5, 0.666, 1);
+        g.setColor(Color.WHITE);
+        ejes(g);
+        marco(g);
+        g.setColor(Color.BLUE);
+        for (double ang = 0; ang <= 2 * Math.PI; ang += 0.01) {
+            double a = 5; // Parámetro de la lemniscata
+            double r2 = a * Math.sqrt(2 * Math.cos(2 * ang));
+            double x = r2 * Math.cos(ang);
+            double y = r2 * Math.sin(ang);
+            if (enVentana(x, y)) {
+                int xd = coorXD(x);
+                int yd = coorYD(y);
+                g.drawRect(xd, yd, 1, 1);
+            }
+        }
+
+        //epicicliodes (cicloides) (COORDENADAS POLARES)
+        ventana(-20, -20, 20, 20);
+        mirilla(0.666, 0.5, 1, 1);
+        g.setColor(Color.WHITE);
+        ejes(g);
+        marco(g);
+        g.setColor(Color.MAGENTA);
+        double R = 5, r2 = 3;
+        for (double ang = 0; ang <= 2 * 10 * Math.PI; ang += 0.01) {
+            double x = (R + r2) * Math.cos(ang) - r2 * Math.cos((R + r2) / r2 * ang);
+            double y = (R + r2) * Math.sin(ang) - r2 * Math.sin((R + r2) / r2 * ang);
+            if (enVentana(x, y)) {
+                int xd = coorXD(x);
+                int yd = coorYD(y);
+                g.drawRect(xd, yd, 1, 1);
             }
         }
     }
+
+
 
     public void ventana (double a, double b, double c,double d){
         XMmin=a;
