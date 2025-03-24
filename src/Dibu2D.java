@@ -61,7 +61,22 @@ public class Dibu2D extends s2D {
         vdt.imprime();
 */
 
-        //Diseñar un objeto con contornos, no repetido  en 2D (carro) con extencion .2d. Dibujarlo. Despues moverlo (transformaciones)( 4 (escalacion, traslacion, rotacion, reflexion) y dibujarlo.
+
+
+        /*Archivo figuraA.D2
+        4
+        4
+        2 1
+        5 1
+        5 3
+        2 4
+        0 1
+        1 2
+        2 3
+        0 3
+        */
+
+        //Diseñar un objeto con contornos, no repetido (casa simple ) en 2D con extencion .2d. Dibujarlo. Despues moverlo (transformaciones)( 4 (escalacion, traslacion, rotacion) y dibujarlo.
 
     }
 
