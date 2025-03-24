@@ -1,3 +1,5 @@
+package Dibujando;
+
 import tiburcio.lib2D.*;
 import java.awt.Color;
 import java.awt.Graphics;
