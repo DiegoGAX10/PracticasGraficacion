@@ -28,7 +28,7 @@ public class Dibu2D extends s2D {
         g.setColor(Color.BLACK);
         ejes(g);
         g.setColor(Color.blue);
-        obj2D A = new obj2D("/home/diego-gallegos/Documents/figuraA.D2");
+        obj2D A = new obj2D("/home/diego-gallegos/Documents/workspace/PracticasGraficacion/src/2d/figuraA.2d");
         dibObj2D(A, g);
         obj2D B = A.transforma(MTCab);
         g.setColor(Color.red);

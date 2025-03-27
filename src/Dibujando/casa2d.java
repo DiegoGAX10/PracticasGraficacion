@@ -2,62 +2,122 @@ package Dibujando;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.List;
 import tiburcio.lib2D.*;
 
 public class casa2d extends s2D {
 
+    private final List<obj2D> objetos = new ArrayList<>();
+
     public casa2d() {
         DEF_SISTEMA("Transformaciones 2D", 600, 600, Color.yellow);
+        cargarObjetos();
+    }
+
+    private void cargarObjetos() {
+        objetos.add(new obj2D("/home/diego-gallegos/Documents/workspace/PracticasGraficacion/src/2d/casa.2d"));
     }
 
     public void paint(Graphics g) {
-        //moverlo (transformaciones)( 4 (escalacion, traslacion, rotacion y reflexion)
-        m2D MT1 = new m2D();
-        m2D ME = new m2D();
-        m2D MT2 = new m2D();
-        m2D MTCab = new m2D();
-        MT1.traslacion(-2, -1);
-        MT1.imprime();
-        ME.escalacion(2, 1);
-        ME.imprime();
-        MT2.traslacion(0, -5);
-        MT2.imprime();
-        MTCab = MT1.multiplica(ME).multiplica(MT2);
-        MTCab.imprime();
-        VENTANA(-10, -10, 10, 10);
         MIRILLA(0, 0, 1, 1);
-        g.setColor(Color.BLACK);
+        VENTANA(-25, -25, 25, 25);
+        g.setColor(Color.black);
         ejes(g);
-        g.setColor(Color.blue);
-        obj2D A = new obj2D("/home/diego-gallegos/Documents/casa.2d");
-        dibObj2D(A, g);
-        obj2D B = A.transforma(MTCab);
-        g.setColor(Color.red);
-        dibObj2D(B, g);
-        g.setColor(Color.magenta);
-        //rotacion
-        m2D MR = new m2D();
-        for (double ang = 0; ang <= 360; ang += 30) {
-            MR.rotacion(ang);
-            obj2D C = B.transforma(MR);
-            dibObj2D(C, g);
+        g.setColor(Color.green);
+        for (obj2D obj : objetos) {
+            dibObj2D(obj, g);
+        }
+
+        // Escalacion en un bucle
+        m2D mt1 = new m2D();
+        m2D mt2 = new m2D();
+        m2D mEscal = new m2D();
+        m2D MTC;
+        mt1.traslacion(-1, -1);
+        mt2.traslacion(1, 1);
+        for (double ang = 1; ang >= 0.1; ang -= 0.05) {
+            mEscal.escalacion(ang, ang);
+            MTC = mt1.multiplica(mEscal).multiplica(mt2);
+            List<obj2D> objetosEscalados = new ArrayList<>();
+            for (obj2D obj : objetos) {
+                objetosEscalados.add(obj.transforma(MTC));
+            }
+            g.setColor(Color.green);
+            for (obj2D obj : objetosEscalados) {
+                dibObj2D(obj, g);
+            }
             try {
                 Thread.sleep(500);
-            } catch (Exception EX) {}
-            g.setColor(Color.BLACK);
-            dibObj2D(C, g);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            g.setColor(Color.black);
+            for (obj2D obj : objetosEscalados) {
+                dibObj2D(obj, g);
+            }
         }
-        //reflexion
+
+        // Traslación en un bucle
+        m2D Mtran = new m2D();
+        for (double ang = 0; ang <= 10; ang++) {
+            double dx = ang;
+            Mtran.traslacion(dx, 0);
+            List<obj2D> objetosTrans = new ArrayList<>();
+            for (obj2D obj : objetos) {
+                objetosTrans.add(obj.transforma(Mtran));
+            }
+            g.setColor(Color.green);
+            for (obj2D obj : objetosTrans) {
+                dibObj2D(obj, g);
+            }
+            try {
+                Thread.sleep(100);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            g.setColor(Color.black);
+            for (obj2D obj : objetosTrans) {
+                dibObj2D(obj, g);
+            }
+        }
+
+        // Traslación final
+        m2D TransFn = new m2D();
+        TransFn.traslacion(15, 0);
+        // Rotación en un bucle
+        m2D MRot = new m2D();
+        for (double ang = 0; ang <= 360; ang += 45) {
+            MRot.rotacion(ang);
+            List<obj2D> objetosRotados = new ArrayList<>();
+            for (obj2D obj : objetos) {
+                objetosRotados.add(obj.transforma(MRot));
+            }
+            g.setColor(Color.yellow);
+            for (obj2D obj : objetosRotados) {
+                dibObj2D(obj, g);
+            }
+            try {
+                Thread.sleep(500);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            g.setColor(Color.black);
+            for (obj2D obj : objetosRotados) {
+                dibObj2D(obj, g);
+            }
+        }
+
+        // Transformación de reflexión
         m2D MRef = new m2D();
         MRef.reflexionY();
+        obj2D B = objetos.get(0);
         obj2D D = B.transforma(MRef);
         g.setColor(Color.green);
         dibObj2D(D, g);
     }
 
     public static void main(String[] args) {
-        casa2d p = new casa2d();
+        new casa2d();
     }
 }
-
-//preguntas, convertir de a a b i

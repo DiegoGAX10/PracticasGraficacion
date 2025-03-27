@@ -3,13 +3,13 @@ package Curvas_Bezier;
 import javax.swing.*;
 import java.awt.*;
 
-public class Bezier extends JFrame {
+public class Bezier3er extends JFrame {
     private final int[][] puntosDeControl = {
             {0, 0}, {3, 4}, {9, -4}, {10, 2}
     };
 
-    public Bezier() {
-        setTitle("Curva de Bézier");
+    public Bezier3er() {
+        setTitle("Curva de Bézier 3er Orden");
         setSize(800, 800);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -53,6 +53,6 @@ public class Bezier extends JFrame {
     }
 
     public static void main(String[] args) {
-        new Bezier();
+        new Bezier3er();
     }
 }

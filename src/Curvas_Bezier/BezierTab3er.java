@@ -1,14 +1,13 @@
 package Curvas_Bezier;
 
 import javax.swing.*;
-import java.awt.*;
 
-public class BezierTab extends JFrame {
+public class BezierTab3er extends JFrame {
     private final int[][] puntosDeControl = {
             {0, 34}, {0, 51}, {9, 18}, {1, 1}
     };
 
-    public BezierTab() {
+    public BezierTab3er() {
         int seg = 10;
         double t;
         for (int i = 1; i <= seg; i++) {
@@ -28,6 +27,6 @@ public class BezierTab extends JFrame {
     }
 
     public static void main(String[] args) {
-        new BezierTab();
+        new BezierTab3er();
     }
 }
