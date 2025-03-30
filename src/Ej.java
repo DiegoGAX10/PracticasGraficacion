@@ -60,13 +60,13 @@ public class Ej extends JFrame{
          System.out.println("yd="+yd);*/
 
         // Parábola //
-        ventana(-5, -5, 5, 5);
+        ventana(-10, -10, 10, 10);
         mirilla(0, 0, 0.333, 0.5);
         g.setColor(Color.WHITE);
         ejes(g);
         marco(g);
         g.setColor(Color.RED);
-        for (double x = -5; x <= 5; x += 0.01) {
+        for (double x = -10; x <= 10; x += 0.01) {
             double y = x * x;
             if (enVentana(x, y)) {
                 int xd = coorXD(x);
@@ -76,13 +76,13 @@ public class Ej extends JFrame{
         }
 
         // Espiral
-        ventana(-10, -10, 10, 10);
+        ventana(-5, -5, 5, 5);
         mirilla(0.333, 0, 0.666, 0.5);
         g.setColor(Color.WHITE);
         ejes(g);
         marco(g);
         double r = 0;
-        for (double ang = 0; ang <= 2 * 10  * Math.PI; ang += 0.01) {
+        for (double ang = 0; ang <= 5 * 10  * Math.PI; ang += 0.01) {
             double x = r * Math.cos(ang);
             double y = r * Math.sin(ang);
             if (enVentana(x, y)) {
