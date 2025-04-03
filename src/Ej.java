@@ -4,19 +4,20 @@ import javax.swing.JFrame;
 
 public class Ej extends JFrame{
 
-    int ResX=600,ResY=600;
-    double XMmin,YMmin,XMmax,YMmax;
-    double XNmin,YNmin,XNmax,YNmax;
+    int ResX = 1200; // Increased width
+    int ResY = 1200; // Increased height
+    double XMmin, YMmin, XMmax, YMmax;
+    double XNmin, YNmin, XNmax, YNmax;
 
     public Ej(){
-        setSize(ResX,ResY);
+        setSize(ResX, ResY);
         setVisible(true);
         setTitle("GRAFICANDO en 2D");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBackground(Color.BLACK);
-
     }
+
     public boolean enVentana(double x, double y){
         return XMmin<=x && x<=XMmax && YMmin<=y && y<=YMmax;
     }
@@ -82,13 +83,13 @@ public class Ej extends JFrame{
         ejes(g);
         marco(g);
         double r = 0;
-        for (double ang = 0; ang <= 5 * 10  * Math.PI; ang += 0.01) {
+        for (double ang = 0; ang <= 5 * 10 * Math.PI; ang += 0.01) {
             double x = r * Math.cos(ang);
             double y = r * Math.sin(ang);
             if (enVentana(x, y)) {
                 int xd = coorXD(x);
                 int yd = coorYD(y);
-                g.drawRect(xd, yd, 1, 1);
+                g.fillRect(xd, yd, 1, 1);
                 r = r + 0.001;
             }
         }
